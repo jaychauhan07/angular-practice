@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { EmpChildComponent } from './emp-child/emp-child.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     AboutComponent,
     EmployeeComponent,
     LoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    EmpChildComponent
   ],
   imports: [
     BrowserModule,

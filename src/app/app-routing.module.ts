@@ -1,3 +1,4 @@
+import { EmpChildComponent } from './emp-child/emp-child.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -26,16 +27,32 @@ const routes: Routes = [
     path: 'employee',
     component: EmployeeComponent,
     canActivate: [AuthGuard],
-    canDeactivate: [CanDeactivateGuard]
+    canDeactivate: [CanDeactivateGuard],
+    children:[
+      {
+        path: "",
+        component: EmployeeComponent,
+      },
+      {
+        path: "child",
+        component: EmpChildComponent,
+      },
+    ]
   },
   {
     path: 'login',
     component: LoginComponent
   },
   {
+    path: 'lazy',
+    loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule),
+    canLoad: [],
+    
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
-  },
+  }
 ];
 
 @NgModule({
