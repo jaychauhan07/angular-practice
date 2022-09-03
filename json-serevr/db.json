@@ -1,6 +1,7 @@
 {
   "login": {
-    "name": "typicode",
-    "password": 12345
+    "name": "Shakti",
+    "password": 12345,
+    "role": "ADMIN"
   }
 }

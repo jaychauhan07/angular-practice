@@ -1,3 +1,4 @@
+import { AuthRoleGuard } from './auth-role.guard';
 import { EmpChildComponent } from './emp-child/emp-child.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
@@ -22,6 +23,8 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
+    data: {"roles": ["ADMIN", "CEO", "HR"]},
+    canActivate: [AuthRoleGuard]
   },
   {
     path: 'employee',
@@ -31,7 +34,8 @@ const routes: Routes = [
     children:[
       {
         path: "",
-        component: EmployeeComponent,
+        redirectTo: "/employee",
+        pathMatch: "full"
       },
       {
         path: "child",

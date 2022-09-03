@@ -11,6 +11,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { EmpChildComponent } from './emp-child/emp-child.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { EmpChildComponent } from './emp-child/emp-child.component';
     EmployeeComponent,
     LoginComponent,
     PageNotFoundComponent,
-    EmpChildComponent
+    EmpChildComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
