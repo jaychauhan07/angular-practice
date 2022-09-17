@@ -26,12 +26,12 @@ const routes: Routes = [
     path: 'about',
     component: AboutComponent,
     data: {"roles": ["ADMIN", "CEO", "HR"]},
-    // canActivate: [AuthRoleGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'employee',
     component: EmployeeComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     // canDeactivate: [CanDeactivateGuard],
     children:[
       {
