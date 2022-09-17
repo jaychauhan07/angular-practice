@@ -1,5 +1,25 @@
 
-<div>
+<table>
+    <tr>
+        <th>
+            First Name
+        </th>
+        <th>Last Name</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let emp of employees">
+        <td>
+            <a [routerLink]="[emp.id,'details']">{{emp.firstName}}</a>
+        </td>
+        <td>{{emp.lastName}}</td>
+        <td>
+            <button [routerLink]="[emp.id,'edit']">Edit</button>
+            <button>Delete</button>
+        </td>
+    </tr>
+</table>
+
+<!-- <div>
     <button routerLink="child">Emp-Child</button>
 </div>
 <div>
@@ -8,6 +28,6 @@
     <Label>Last Name</Label>
     <input type="text" [(ngModel)]="lastName" name="" id="">
     <button>Add Employee</button>
-</div>
+</div> -->
 
 <router-outlet></router-outlet>

@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { EmpChildComponent } from './emp-child/emp-child.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { EmployeesDetailComponent } from './employees-detail/employees-detail.component';
+import { EmaployeeFormComponent } from './emaployee-form/emaployee-form.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ChildComponent } from './child/child.component';
     PageNotFoundComponent,
     EmpChildComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    EmployeesDetailComponent,
+    EmaployeeFormComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,5 @@
+import { EmaployeeFormComponent } from './emaployee-form/emaployee-form.component';
+import { EmployeesDetailComponent } from './employees-detail/employees-detail.component';
 import { AuthRoleGuard } from './auth-role.guard';
 import { EmpChildComponent } from './emp-child/emp-child.component';
 import { HomeComponent } from './home/home.component';
@@ -24,13 +26,13 @@ const routes: Routes = [
     path: 'about',
     component: AboutComponent,
     data: {"roles": ["ADMIN", "CEO", "HR"]},
-    canActivate: [AuthRoleGuard]
+    // canActivate: [AuthRoleGuard]
   },
   {
     path: 'employee',
     component: EmployeeComponent,
-    canActivate: [AuthGuard],
-    canDeactivate: [CanDeactivateGuard],
+    // canActivate: [AuthGuard],
+    // canDeactivate: [CanDeactivateGuard],
     children:[
       {
         path: "",
@@ -44,13 +46,21 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'employee/:id/details',
+    component: EmployeesDetailComponent,
+  },
+  {
+    path: 'employee/:id/edit',
+    component: EmaployeeFormComponent,
+  },
+  {
     path: 'login',
     component: LoginComponent
   },
   {
     path: 'lazy',
     loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule),
-    canLoad: [],
+    // canLoad: [],
     
   },
   {
